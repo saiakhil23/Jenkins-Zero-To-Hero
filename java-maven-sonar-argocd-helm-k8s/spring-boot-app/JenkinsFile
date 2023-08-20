@@ -52,6 +52,7 @@ pipeline {
         }
         steps {
             withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
+                sh ' sudo chmod 777 java-maven-sonar-argocd-helm-k8s/spring-boot-app/update.sh '
                 sh './java-maven-sonar-argocd-helm-k8s/spring-boot-app/update.sh'
             }
         }
